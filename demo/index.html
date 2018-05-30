@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Peekaboo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="peekaboo" />
+  <meta name="twitter:description" content="A JavaScript helper for viewport based CSS animations" />
+  <meta name="twitter:url" content="https://anavicente.me/peekaboo/" />
+  <meta name="twitter:image" content="https://anavicente.me/peekaboo/share.jpg" />
+
+  <meta property="og:url" content="https://anavicente.me/peekaboo/" />
+  <meta property="og:image" content="https://anavicente.me/peekaboo/share.jpg" />
+  <meta property="og:title" content="peekaboo" />
+  <meta property="og:description" content="A JavaScript helper for viewport based CSS animations" />
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/demo.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="title-wrap">
+      <span class="title" data-peekaboo="fadeUp">Peekaboo</span>
+    </h1>
+    <h2 class="subtitle-wrap">
+      <span class="subtitle" data-peekaboo="fadeUp" data-peekaboo-delay="300">A JavaScript helper for viewport based CSS animations</span>
+    </h2>
+  </header>
+  <section class="container links" data-peekaboo="fadeIn" data-peekaboo-delay="600">
+    <a href="https://github.com/anacoelhovicente/peekaboo">Github</a>
+    <a href="https://github.com/anacoelhovicente/peekaboo/archive/master.zip">Download</a>
+  </section>
+  <article class="container" data-peekaboo="fadeIn" data-peekaboo-delay="600">
+    <h3>About</h3>
+    <p>Peekaboo is a minimal 2k library for viewport animations.</p>
+    <p>Peekaboo uses IntersectionObserver to check <strong>data-peekaboo</strong> items and adds a <strong>.peekabooed</strong> class if they are visible. For browsers without support it relies on requestAnimationFrame.</p>
+    <p>With that, you can do all the animations you want, controlling them with CSS.</p>
+  </article>
+  <article class="container" data-peekaboo="fadeIn" data-peekaboo-delay="600">
+    <h3>Animations</h3>
+    <p>By default peekaboo doesn't provide any animations, so to animate you have to extend the <strong>.peekabooed</strong> class to animate visible items.</p>
+    <p>You can delay setting the visible class with the <strong>data-peekaboo-delay</strong> attribute. Or if you prefer you can set delays in the CSS.</p>
+  </article>
+  <article class="container" data-peekaboo="fadeIn" data-peekaboo-delay="600">
+    <h3>Install</h3>
+    <p>You can download the latest version or checkout all the releases <a href="https://github.com/anacoelhovicente/peekaboo/releases">here</a>.</p>
+  </article>
+  <article class="container" data-peekaboo="fadeIn">
+    <h3>Usage</h3>
+    <p>Once you have downloaded Peekaboo you need to include the JavaScript.</p>
+    <pre><code>&ltscript src="peekaboo.min.js"&gt&lt/script&gt
+&ltscript&gt
+  var peekaboo = new Peekaboo();
+&lt/script&gt</code></pre>
+    <p>And then setup the items to observe with the <strong>data-peekaboo</strong> attribute.</p>
+    <pre><code>&ltdiv data-peekaboo&gt&lt/div&gt
+&ltdiv data-peekaboo data-peekaboo-delay="500"&gt&lt/div&gt
+&ltdiv data-peekaboo="fadeIn" data-peekaboo-delay="500"&gt&lt/div&gt</code></pre>
+  </article>
+  <article class="container" data-peekaboo="fadeIn">
+    <h3>Options</h3>
+    <pre><code>var peekaboo = new Peekaboo({
+      root: null, //defaults to document
+      threshold: 0.25,  //the percentage visible to trigger the finishedClass
+      finishedClass: 'peekabooed'
+});</code></pre>
+  </article>
+  <article class="container" data-peekaboo="fadeIn">
+    <h3>License</h3>
+    <p>MIT © 2018 <a href="https://anavicente.me">Ana Vicente</a></p>
+  </article>
+  <script src="../peekaboo.min.js"></script>
+  <script>
+  var peekaboo = new Peekaboo({
+  threshold: 0.3,
+});
+</script>
+</body>
+</html>

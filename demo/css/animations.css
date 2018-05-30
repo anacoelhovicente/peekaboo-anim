@@ -1,0 +1,19 @@
+[data-peekaboo='fadeIn'] {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+[data-peekaboo='fadeIn'].peekabooed {
+  opacity: 1;
+}
+
+[data-peekaboo='fadeUp'] {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.37, 0.01, 0, 0.98);
+}
+
+[data-peekaboo='fadeUp'].peekabooed {
+  opacity: 1;
+  transform: none;
+}

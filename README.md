@@ -10,7 +10,7 @@ Peekaboo uses IntersectionObserver to check `data-peekaboo` items and adds a `.p
 
 With that, you can do all the animations you want, controlling them with CSS.
 
-##Install
+## Install
 
 ```bash
 $ npm install wallop

@@ -10,6 +10,12 @@ Peekaboo uses IntersectionObserver to check `data-peekaboo` items and adds a `.p
 
 With that, you can do all the animations you want, controlling them with CSS.
 
+##Install
+
+```bash
+$ npm install wallop
+```
+
 ## Animations
 
 By default peekaboo doesn't provide any animations, so to animate you have to extend the `.peekabooed` class to animate visible items.

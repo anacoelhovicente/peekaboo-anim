@@ -73,9 +73,9 @@
     if (!this.isPeekabooed(item)) {
       var bounds = item.getBoundingClientRect(),
         visibleY = window.innerHeight - bounds.height * this.options.threshold,
-        visibleX = window.innerHeight - bounds.width * this.options.threshold;
+        visibleX = window.innerWidth - bounds.width * this.options.threshold;
 
-      if (bounds.top < visibleY && bounds.left < visibleX && bounds.bottom >= 0 && bounds.right >= 0) {
+      if (bounds.top <= visibleY && bounds.left <= visibleX) {
         this.animItem(item);
       }
 

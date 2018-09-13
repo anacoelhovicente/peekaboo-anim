@@ -13,7 +13,7 @@ With that, you can do all the animations you want, controlling them with CSS.
 ## Install
 
 ```bash
-$ npm install wallop
+$ npm install peekaboo-anim
 ```
 
 ## Animations

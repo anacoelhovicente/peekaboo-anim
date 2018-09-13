@@ -20,7 +20,7 @@ $ npm install peekaboo-anim
 
 By default peekaboo doesn't provide any animations, so to animate you have to extend the `.peekabooed` class to animate visible items.
 
-You can delay setting the `.peekabooed` class with the `data-peekaboo-delay` attribute. Or if you prefer you can set delays in the CSS.
+You can delay the setting of the `.peekabooed` class with the `data-peekaboo-delay` attribute. Or if you prefer you can set delays in the CSS.
 
 ## Usage
 

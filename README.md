@@ -13,33 +13,38 @@ With that, you can do all the animations you want, controlling them with CSS.
 ## Install
 
 ```bash
-$ npm install wallop
+$ npm install peekaboo-anim
 ```
+Once you have installed Peekaboo you need to include the JavaScript.
 
-## Animations
+```js
+// ES6 modules
+import Peekaboo from 'peekaboo-anim';
 
-By default peekaboo doesn't provide any animations, so to animate you have to extend the `.peekabooed` class to animate visible items.
-
-You can delay setting the `.peekabooed` class with the `data-peekaboo-delay` attribute. Or if you prefer you can set delays in the CSS.
+// CommonJS modules
+var Peekaboo = require('Peekaboo');
+```
 
 ## Usage
 
-Once you have downloaded Peekaboo you need to include the JavaScript.
-
-```html
-<script src="peekaboo.min.js"></script>
-<script>
-  var peekaboo = new Peekaboo();
-</script>
-```
-
-And then setup the items to observe with the `data-peekaboo` attribute.
+Setup the items to observe with the `data-peekaboo` attribute.
 
 ```html
 <div data-peekaboo></div>
 <div data-peekaboo data-peekaboo-delay="500"></div>
 <div data-peekaboo="fadeIn" data-peekaboo-delay="500"></div>
 ```
+
+Then initialize Peekaboo.
+```js
+var peekaboo = new Peekaboo();
+```
+
+## Animations
+
+By default peekaboo doesn't provide any animations, so to animate you have to extend the `.peekabooed` class to animate visible items.
+
+You can delay the setting of the `.peekabooed` class with the `data-peekaboo-delay` attribute. Or if you prefer you can set delays in the CSS.
 
 ## Options
 

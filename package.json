@@ -2,16 +2,23 @@
   "name": "peekaboo",
   "version": "1.0.0",
   "description": "JavaScript helper for viewport based CSS animations",
-  "main": "peekaboo.min.js",
+  "main": "dist/peekaboo.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anacoelhovicente/peekaboo.git"
   },
   "scripts": {
-    "uglify": "./node_modules/.bin/uglifyjs ./peekaboo.js -o ./peekaboo.min.js --comments -m -c ",
+    "uglify": "mkdir dist && ./node_modules/.bin/uglifyjs ./peekaboo.js -o ./dist/peekaboo.min.js --comments -m -c ",
     "build": "npm run uglify"
   },
-  "keywords": ["intersectionobserver", "viewport", "animation", "javascript", "CSS", "scroll"],
+  "keywords": [
+    "intersectionobserver",
+    "viewport",
+    "animation",
+    "javascript",
+    "CSS",
+    "scroll"
+  ],
   "author": "Ana Vicente <contact.me@anavicente.me> (https://anavicente.me)",
   "license": "MIT",
   "bugs": {

@@ -1,6 +1,6 @@
 /**
  * JavaScript helper for viewport based CSS animations
- * @version v1.0
+ * @version v1.0.2
  * @author Ana Vicente
  * @copyright ©2018 Ana Vicente
  * Released under the MIT license
@@ -49,7 +49,10 @@
       threshold: this.options.threshold,
     };
 
-    var observer = new IntersectionObserver(this.observeItem.bind(this), options);
+    var observer = new IntersectionObserver(
+      this.observeItem.bind(this),
+      options
+    );
 
     for (var i = 0; i < this.items.length; i++) {
       observer.observe(this.items[i]);
@@ -61,7 +64,10 @@
       var entry = entries[i],
         item = entry.target;
 
-      if (entry.intersectionRatio > this.options.threshold && !this.isPeekabooed(item)) {
+      if (
+        entry.intersectionRatio > this.options.threshold &&
+        !this.isPeekabooed(item)
+      ) {
         this.animItem(item);
 
         observer.unobserve(item);
@@ -84,7 +90,9 @@
   };
 
   PK.animItem = function(item) {
-    var delay = item.getAttribute('data-peekaboo-delay') ? item.getAttribute('data-peekaboo-delay') : 0;
+    var delay = item.getAttribute('data-peekaboo-delay')
+      ? item.getAttribute('data-peekaboo-delay')
+      : 0;
     var _this = this;
 
     this.peekabooed.push(item);

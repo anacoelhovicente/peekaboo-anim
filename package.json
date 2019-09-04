@@ -1,6 +1,6 @@
 {
   "name": "peekaboo",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "JavaScript helper for viewport based CSS animations",
   "main": "dist/peekaboo.min.js",
   "repository": {

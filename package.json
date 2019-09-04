@@ -8,7 +8,7 @@
     "url": "git+https://github.com/anacoelhovicente/peekaboo.git"
   },
   "scripts": {
-    "uglify": "mkdir dist && ./node_modules/.bin/uglifyjs ./peekaboo.js -o ./dist/peekaboo.min.js --comments -m -c ",
+    "uglify": "mkdir -p dist && ./node_modules/.bin/uglifyjs ./src/peekaboo.js -o ./dist/peekaboo.min.js --comments -m -c ",
     "build": "npm run uglify"
   },
   "keywords": [

@@ -7,13 +7,15 @@
   opacity: 1;
 }
 
-[data-peekaboo='fadeUp'] {
+[data-peekaboo='fadeUp'],
+[data-peekaboo='clip'] > * {
   opacity: 0;
   transform: translateY(60px);
   transition: all 1s cubic-bezier(0.37, 0.01, 0, 0.98);
 }
 
-[data-peekaboo='fadeUp'].peekabooed {
+[data-peekaboo='fadeUp'].peekabooed,
+[data-peekaboo='clip'].peekabooed > * {
   opacity: 1;
   transform: none;
 }

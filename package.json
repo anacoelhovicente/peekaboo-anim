@@ -1,6 +1,6 @@
 {
   "name": "peekaboo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript helper for viewport based CSS animations",
   "main": "dist/peekaboo.min.js",
   "repository": {
@@ -9,6 +9,8 @@
   },
   "scripts": {
     "uglify": "mkdir -p dist && ./node_modules/.bin/uglifyjs ./src/peekaboo.js -o ./dist/peekaboo.min.js --comments -m -c ",
+    "prepublishOnly": "npm run-script build",
+    "prepare": "npm run-script build",
     "build": "npm run uglify"
   },
   "keywords": [

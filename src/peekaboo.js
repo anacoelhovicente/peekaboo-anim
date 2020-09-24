@@ -6,7 +6,7 @@
  * Released under the MIT license
  **/
 
-(function(global) {
+(function (global) {
   function Peekaboo(options) {
     this.peekabooed = [];
     this.options = {
@@ -27,7 +27,7 @@
 
   var PK = Peekaboo.prototype;
 
-  PK.initPeekaboo = function() {
+  PK.initPeekaboo = function () {
     var hasIntersectionObserver =
       'IntersectionObserver' in window &&
       'IntersectionObserverEntry' in window &&
@@ -43,7 +43,7 @@
     }
   };
 
-  PK.createObserver = function() {
+  PK.createObserver = function () {
     var options = {
       root: this.options.root,
       threshold: this.options.threshold,
@@ -59,15 +59,12 @@
     }
   };
 
-  PK.observeItem = function(entries, observer) {
+  PK.observeItem = function (entries, observer) {
     for (var i = 0; i < entries.length; i++) {
       var entry = entries[i],
         item = entry.target;
 
-      if (
-        entry.intersectionRatio > this.options.threshold &&
-        !this.isPeekabooed(item)
-      ) {
+      if (entry.intersectionRatio > this.options.threshold) {
         this.animItem(item);
 
         observer.unobserve(item);
@@ -75,7 +72,7 @@
     }
   };
 
-  PK.requestAnim = function(item) {
+  PK.requestAnim = function (item) {
     if (!this.isPeekabooed(item)) {
       var bounds = item.getBoundingClientRect(),
         visibleY = window.innerHeight - bounds.height * this.options.threshold,
@@ -89,20 +86,23 @@
     }
   };
 
-  PK.animItem = function(item) {
-    var delay = item.getAttribute('data-peekaboo-delay')
-      ? item.getAttribute('data-peekaboo-delay')
-      : 0;
+  PK.animItem = function (item) {
+    var delayAttr = item.getAttribute('data-peekaboo-delay');
+    var delay = delayAttr ? parseInt(delayAttr, 10) : 0;
     var _this = this;
 
     this.peekabooed.push(item);
 
-    setTimeout(function() {
+    if (delay > 0) {
+      setTimeout(function () {
+        item.classList.add(_this.options.finishedClass);
+      }, delay);
+    } else {
       item.classList.add(_this.options.finishedClass);
-    }, delay);
+    }
   };
 
-  PK.isPeekabooed = function(item) {
+  PK.isPeekabooed = function (item) {
     return this.peekabooed.indexOf(item) >= 0;
   };
 
@@ -123,7 +123,7 @@
 
   if (typeof define === 'function' && define.amd) {
     //AMD
-    define(function() {
+    define(function () {
       return Peekaboo;
     });
   } else if (typeof module !== 'undefined' && module.exports) {

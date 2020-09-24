@@ -1,6 +1,6 @@
 {
-  "name": "peekaboo",
-  "version": "1.0.3",
+  "name": "peekaboo-anim",
+  "version": "1.0.4",
   "description": "JavaScript helper for viewport based CSS animations",
   "main": "dist/peekaboo.min.js",
   "repository": {
@@ -29,5 +29,11 @@
   "homepage": "https://anavicente.me/peekaboo/",
   "devDependencies": {
     "uglify-js": "^3.3.28"
+  },
+  "publishConfig": {
+    "access": "public",
+    "branches": [
+      "master"
+    ]
   }
 }

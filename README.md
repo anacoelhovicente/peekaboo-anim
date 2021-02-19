@@ -44,7 +44,7 @@ const peekaboo = new Peekaboo();
 
 ## Animations
 
-By default peekaboo doesn't provide any animations, so to animate you have to extend the .peekabooed class to animate visible items.
+By default peekaboo doesn't provide any animations, so to animate you have to extend the `.peekabooed` class to animate visible items.
 
 Since Peekaboo relies on CSS for the animations you can work with attribute values or with CSS classes.
 

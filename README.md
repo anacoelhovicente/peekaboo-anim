@@ -59,7 +59,7 @@ Since Peekaboo relies on CSS for the animations you can work with attribute valu
 
 #### data-peekaboo-delay
 
-A number in ms to delay the observer's callback. Relies on setTimeout for the delay.
+A number in ms to delay the observer's callback. Relies on `setTimeout` for the delay.
 
 ```html
 <div data-peekaboo data-peekaboo-delay="500"></div>

@@ -24,6 +24,7 @@ By default peekaboo doesn't provide any animations, so to animate you have to ex
 
 ## Usage
 
+#### Add the markup
 Setup the items to observe with the `data-peekaboo` attribute.
 
 ```html
@@ -43,7 +44,7 @@ You can delay the intersection callback with the `data-peekaboo-delay` attribute
 <div data-peekaboo data-peekaboo-delay="500"></div>
 ```
 
-Then initialize Peekaboo.
+#### Import Peekaboo
 
 ```js
 // ES6 modules
@@ -51,8 +52,11 @@ import Peekaboo from 'peekaboo-anim';
 
 // CommonJS modules
 const Peekaboo = require('Peekaboo');
+```
 
-// Initialize Peekaboo
+#### Then initialize Peekaboo
+
+```js
 const peekaboo = new Peekaboo();
 ```
 

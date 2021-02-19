@@ -10,38 +10,20 @@ Peekaboo uses IntersectionObserver to check `data-peekaboo` items and adds a `.p
 
 Peekaboo only works in one direction, with animated items being removed from the observer.
 
-With that, you can do all the animations you want, controlling them with CSS.
-
 ## Install
 
 ```bash
 $ npm install peekaboo-anim
 ```
 
-## Animations
-
-By default peekaboo doesn't provide any animations, so to animate you have to extend the .peekabooed class to animate visible items. 
-
 ## Usage
 
 #### Add the markup
+
 Setup the items to observe with the `data-peekaboo` attribute.
 
 ```html
 <div data-peekaboo></div>
-```
-
-Since Peekaboo relies on CSS for the animations you can work with attribute values or with CSS classes.
-
-```html
-<div data-peekaboo class="fade-in"></div>
-<div data-peekaboo="fadeIn"></div>
-```
-
-You can delay the intersection callback with the `data-peekaboo-delay` attribute. Or if you prefer you can set delays in the CSS. 
-
-```html
-<div data-peekaboo data-peekaboo-delay="500"></div>
 ```
 
 #### Import Peekaboo
@@ -54,13 +36,38 @@ import Peekaboo from 'peekaboo-anim';
 const Peekaboo = require('Peekaboo');
 ```
 
-#### Then initialize Peekaboo
+#### Initialize Peekaboo
 
 ```js
 const peekaboo = new Peekaboo();
 ```
 
+## Animations
+
+By default peekaboo doesn't provide any animations, so to animate you have to extend the .peekabooed class to animate visible items.
+
+Since Peekaboo relies on CSS for the animations you can work with attribute values or with CSS classes.
+
+```html
+<div data-peekaboo class="fade-in"></div>
+<div data-peekaboo="fadeIn"></div>
+```
+
 ## Options
+
+### Markup Options
+
+#### data-peekaboo-delay
+
+A number in ms to delay the observer's callback. Relies on setTimeout for the delay.
+
+```html
+<div data-peekaboo data-peekaboo-delay="500"></div>
+```
+
+If you prefer you can set delays with CSS.
+
+### JS Options
 
 ```js
 var peekaboo = new Peekaboo({
